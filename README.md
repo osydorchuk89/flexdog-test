@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# App for managing product wishlists
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This is a test app that allows registered and logged in users to create/edit/delete wishlists, add/remove products to/from them, move products between wishlists, and add products from wishlists to a shopping cart.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Installation & setup
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 1. Clone the repository
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Clone the repository to your local machine by running the following command:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`git clone https://github.com/osydorchuk89/flexdog-test.git`
 
-## Learn More
+Next, navigate to the created directory:
 
-To learn more about Next.js, take a look at the following resources:
+`cd flexdog-test`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 2. Install dependencies
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Install required dependencies with the command:
 
-## Deploy on Vercel
+`npm install`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 3. Run the app
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Run the application by entering the following command:
+
+`npm run dev`
+
+The app is now accessible at [http://localhost:3000](http://localhost:3000).
+
+## Installation with Docker
+
+Alternatively, you can run the app using Docker. For this, make sure that you have Docker installed on your machine. After cloning the repository, build and run a Docker container, using the following commands:
+
+`docker build -t flexdog-test .`
+
+`docker run -p 3000:3000 flexdog-test`
+
+The app is again accesible at [http://localhost:3000](http://localhost:3000).
