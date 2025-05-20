@@ -18,9 +18,10 @@ interface WishlistProps {
 }
 
 export const Wishlists = ({ wishlists, user }: WishlistProps) => {
-    let defaultWishList = wishlists.find(
-        (wishlist) => wishlist.isDefault === true
-    )!;
+    const getDefaultWishlist = () => {
+        return wishlists.find((wishlist) => wishlist.isDefault === true)!;
+    };
+    let defaultWishList = getDefaultWishlist();
     const [selectedWishList, setSelectedWishlist] = useState(defaultWishList);
 
     useEffect(() => {
@@ -28,9 +29,7 @@ export const Wishlists = ({ wishlists, user }: WishlistProps) => {
             (wishlist) => wishlist.id === selectedWishList.id
         );
         if (selectedWishListDeleted) {
-            defaultWishList = wishlists.find(
-                (wishlist) => wishlist.isDefault === true
-            )!;
+            defaultWishList = getDefaultWishlist();
             setSelectedWishlist(defaultWishList);
         } else {
             const updatedWishlist = wishlists.find(

@@ -21,13 +21,15 @@ export const AddToWishlistModal = ({ wishlists }: AddToWishlistModalProps) => {
     );
     const { activeWishlist } = useAppSelector((state) => state.userWishlists);
 
-    let productWishlist =
-        activeWishlist ||
-        wishlists.find((wishlist) =>
+    const findWishlist = () => {
+        return wishlists.find((wishlist) =>
             (wishlist.products as Product[]).find(
                 (product) => product.id === wishlistProductId
             )
         );
+    };
+
+    let productWishlist = activeWishlist || findWishlist();
     const productOnWishlist = productWishlist !== undefined;
 
     const defaultWishList = wishlists.find(
@@ -39,18 +41,15 @@ export const AddToWishlistModal = ({ wishlists }: AddToWishlistModalProps) => {
     );
 
     useEffect(() => {
-        productWishlist =
-            activeWishlist ||
-            wishlists.find((wishlist) =>
-                (wishlist.products as Product[]).find(
-                    (product) => product.id === wishlistProductId
-                )
-            );
+        productWishlist = activeWishlist || findWishlist();
         productWishlist && setSelectedWishlistId(productWishlist.id);
     }, [addToWishlistFormOpen]);
 
     const dispatch = useAppDispatch();
-    const onModalClose = () => dispatch(modalActions.closeAddToWishListForm());
+    const onModalClose = () => {
+        // dispatch(userWishlistActions.setActiveWishlist(null));
+        dispatch(modalActions.closeAddToWishListForm());
+    };
 
     const modalRef = useRef<HTMLDivElement>(null);
     useModalClose(onModalClose, modalRef as React.RefObject<HTMLDivElement>);

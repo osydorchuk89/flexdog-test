@@ -17,14 +17,16 @@ interface ProductCardProps {
 }
 
 export const ProductCard = ({ product, wishlists, user }: ProductCardProps) => {
+    const isProductOnWishList = () => {
+        return wishlists.some((wishlist) =>
+            (wishlist.products as Product[]).some(
+                (item) => item.id === product.id
+            )
+        );
+    };
+
     const productOnWishlist =
-        wishlists.length === 0
-            ? false
-            : wishlists?.some((wishlist) =>
-                  (wishlist.products as Product[]).some(
-                      (item) => item.id === product.id
-                  )
-              );
+        wishlists.length === 0 ? false : isProductOnWishList();
 
     const [onWishList, setOnWishList] = useState(productOnWishlist);
 
@@ -33,11 +35,7 @@ export const ProductCard = ({ product, wishlists, user }: ProductCardProps) => {
             setOnWishList(false);
             return;
         }
-        const productOnWishlist = wishlists.some((wishlist) =>
-            (wishlist.products as Product[]).some(
-                (item) => item.id === product.id
-            )
-        );
+        const productOnWishlist = isProductOnWishList();
         setOnWishList(productOnWishlist);
     }, [wishlists, product.id]);
 

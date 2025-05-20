@@ -5,6 +5,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { ProductCard } from "./ProductCard";
 import { type Wishlist, type Product, type User } from "../../lib/entities";
 import { Button } from "./ui/Button";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { userWishlistActions } from "@/store";
 
 interface ProductsProps {
     products: Product[];
@@ -16,11 +18,18 @@ export const Products = ({ products, wishlists, user }: ProductsProps) => {
     const searchParams = useSearchParams();
     const filterParam = searchParams.get("for");
 
+    const dispatch = useAppDispatch();
+
     if (filterParam) {
         products = products.filter((product) => product.for === filterParam);
     }
 
     const router = useRouter();
+
+    const handleClick = () => {
+        dispatch(userWishlistActions.setActiveWishlist(null));
+        router.push("/");
+    };
 
     return (
         <>
@@ -39,10 +48,7 @@ export const Products = ({ products, wishlists, user }: ProductsProps) => {
             ) : (
                 <div className="min-h-[40vh] flex flex-col gap-10 justify-center items-center">
                     <p>Tady nejsou žádné produkty.</p>
-                    <Button
-                        text="Zobrazit produkty"
-                        onClick={() => router.push("/")}
-                    />
+                    <Button text="Zobrazit produkty" onClick={handleClick} />
                 </div>
             )}
         </>

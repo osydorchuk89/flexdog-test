@@ -39,7 +39,7 @@ export const LoginForm = () => {
                 onSubmit={handleSubmit}
             >
                 <h2 className="text-2xl font-bold text-center">
-                    Login to your account
+                    Přihlášení k účtu
                 </h2>
                 <div className="flex flex-col gap-2">
                     <label htmlFor="email">Email:</label>
@@ -51,7 +51,7 @@ export const LoginForm = () => {
                     />
                 </div>
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="password">Password:</label>
+                    <label htmlFor="password">Heslo:</label>
                     <input
                         className="border border-gray-700 rounded-xl px-3 py-2 focus:border-stone-900"
                         type="password"
@@ -61,7 +61,7 @@ export const LoginForm = () => {
                 </div>
                 <div className="flex justify-center">
                     <Button
-                        text={pending ? "POČKEJTE PROSÍM" : "PŘIHLÁSIT"}
+                        text={pending ? "POČKEJTE PROSÍM" : "PŘIHLÁSIT SE"}
                         disabled={pending}
                     />
                 </div>
