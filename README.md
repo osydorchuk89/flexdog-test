@@ -32,7 +32,7 @@ The app is now accessible at [http://localhost:3000](http://localhost:3000).
 
 ## Installation with Docker
 
-Alternatively, you can run the app using Docker. For this, make sure that you have Docker installed and that is it running on your machine. After cloning the repository and navigating to the target directory, build and run a Docker container, using the following commands:
+Alternatively, you can run the app using Docker. For this, make sure that Docker is installed and running on your machine. After cloning the repository and navigating to the target directory, build and run a Docker container, using the following commands:
 
 `docker build -t flexdog-test .`
 
