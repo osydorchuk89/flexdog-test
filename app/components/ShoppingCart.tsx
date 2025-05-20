@@ -1,3 +1,4 @@
+import { useRouter } from "next/navigation";
 import { addOrRemoveFromCart, clearCart } from "../../lib/actions";
 import { type Cart, type Product } from "../../lib/entities";
 import { Button } from "./ui/Button";
@@ -11,16 +12,21 @@ interface ShoppingCartProps {
 }
 
 export const ShoppingCart = ({ userCart, handleClose }: ShoppingCartProps) => {
+    const router = useRouter();
+
     const handleAddProduct = async (productId: string) => {
         await addOrRemoveFromCart(userCart.userId, productId);
+        router.refresh();
     };
 
     const handleRemoveProduct = async (productId: string) => {
         await addOrRemoveFromCart(userCart.userId, productId, true);
+        router.refresh();
     };
 
     const handleRemoveAllProducts = async () => {
         await clearCart(userCart.userId);
+        router.refresh();
     };
 
     return (

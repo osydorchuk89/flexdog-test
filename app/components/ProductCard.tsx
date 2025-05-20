@@ -8,6 +8,7 @@ import { addOrRemoveFromWishList } from "../../lib/actions";
 import { ExchangeIcon } from "./ui/icons/ExchangeIcon";
 import { useAppDispatch } from "@/store/hooks";
 import { modalActions } from "@/store";
+import { useRouter } from "next/navigation";
 
 interface ProductCardProps {
     product: Product;
@@ -42,6 +43,8 @@ export const ProductCard = ({ product, wishlists, user }: ProductCardProps) => {
 
     const dispatch = useAppDispatch();
 
+    const router = useRouter();
+
     const handleClickWishlist = async () => {
         if (!user) {
             dispatch(modalActions.openRedirectToLogin());
@@ -55,6 +58,7 @@ export const ProductCard = ({ product, wishlists, user }: ProductCardProps) => {
             );
             if (wishlist) {
                 await addOrRemoveFromWishList(product.id, wishlist.id);
+                router.refresh();
             }
         } else {
             dispatch(modalActions.openAddToWishlistForm());

@@ -5,7 +5,6 @@ import { NextRequest, NextResponse } from "next/server";
 
 import { type Wishlist } from "@/lib/entities";
 import { fetchWishlists, getProductsMap } from "@/lib/utils";
-import { revalidatePath } from "next/cache";
 
 const wishlistsFilePath = path.join(process.cwd(), "data", "wishlists.json");
 
@@ -112,8 +111,6 @@ export async function POST(req: NextRequest) {
             JSON.stringify(updatedWishLists, null, 4),
             "utf-8"
         );
-
-        revalidatePath("/", "layout");
 
         return NextResponse.json({
             message: wishlistId

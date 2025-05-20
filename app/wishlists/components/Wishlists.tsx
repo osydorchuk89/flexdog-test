@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import { Products } from "@/app/components/Products";
 import { Button } from "@/app/components/ui/Button";
@@ -52,11 +52,14 @@ export const Wishlists = ({ wishlists, user }: WishlistProps) => {
         dispatch(userWishlistActions.setActiveWishlist(null));
     };
 
+    const router = useRouter();
+
     const handleDeleteWishlist = async () => {
         if (selectedWishList.products.length > 0) {
             dispatch(modalActions.openDeleteWishlist());
         } else {
             await deleteWishList(selectedWishList.id);
+            router.refresh();
         }
     };
 

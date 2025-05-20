@@ -34,9 +34,7 @@
         "isDefault": true,
         "isPublic": true,
         "products": [
-            "2b3c4d5e-6789-1011-1121-415161718192",
-            "4d5e6f7g-8901-1011-1121-617181920214",
-            "5e6f7g8h-9011-1011-1121-718192021225"
+            "4d5e6f7g-8901-1011-1121-617181920214"
         ]
     },
     {
@@ -46,7 +44,9 @@
         "description": "",
         "isDefault": false,
         "isPublic": true,
-        "products": []
+        "products": [
+            "2b3c4d5e-6789-1011-1121-415161718192"
+        ]
     },
     {
         "id": "806d2a35-d3ee-4b2f-b311-3f59613990b9",
@@ -55,7 +55,9 @@
         "description": "",
         "isDefault": false,
         "isPublic": true,
-        "products": []
+        "products": [
+            "5e6f7g8h-9011-1011-1121-718192021225"
+        ]
     },
     {
         "id": "2afa4351-6499-4d46-af64-b8be5597637b",

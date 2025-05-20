@@ -10,6 +10,7 @@ import { type Product } from "@/lib/entities";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { modalActions } from "@/store";
 import { CloseIconButton } from "@/app/components/ui/CloseIconButton";
+import { useRouter } from "next/navigation";
 
 interface WishlistFormModalProps {
     userId: string;
@@ -56,6 +57,8 @@ export const WishlistFormModal = ({ userId }: WishlistFormModalProps) => {
     const modalRef = useRef<HTMLDivElement>(null);
     useModalClose(onModalClose, modalRef as React.RefObject<HTMLDivElement>);
 
+    const router = useRouter();
+
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
@@ -98,6 +101,7 @@ export const WishlistFormModal = ({ userId }: WishlistFormModalProps) => {
             setDescription("");
             setIsDefault(false);
             setIsPublic(false);
+            router.refresh();
             dispatch(modalActions.closeWishlistForm());
         }
     };

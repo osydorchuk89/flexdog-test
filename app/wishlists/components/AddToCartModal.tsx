@@ -9,6 +9,7 @@ import { useModalClose } from "@/lib/hooks";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { modalActions, userWishlistActions } from "@/store";
 import { CloseIconButton } from "@/app/components/ui/CloseIconButton";
+import { useRouter } from "next/navigation";
 
 export const AddToCartModal = () => {
     const { addToCartOpen } = useAppSelector((state) => state.modals);
@@ -23,6 +24,8 @@ export const AddToCartModal = () => {
     const modalRef = useRef<HTMLDivElement>(null);
     useModalClose(onModalClose, modalRef as React.RefObject<HTMLDivElement>);
 
+    const router = useRouter();
+
     const handleCartUpdate = async (removeFromWishlist: boolean) => {
         if (activeWishlist) {
             for (const product of activeWishlist.products as Product[]) {
@@ -34,6 +37,7 @@ export const AddToCartModal = () => {
                     );
                 }
             }
+            router.refresh();
             dispatch(userWishlistActions.setActiveWishlist(null));
             dispatch(modalActions.closeAddToCart());
         }

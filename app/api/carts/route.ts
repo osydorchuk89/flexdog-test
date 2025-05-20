@@ -4,7 +4,6 @@ import { NextRequest, NextResponse } from "next/server";
 
 import { type Product } from "@/lib/entities";
 import { fetchCarts, getProductsMap } from "@/lib/utils";
-import { revalidatePath } from "next/cache";
 
 const cartsFilePath = path.join(process.cwd(), "data", "carts.json");
 
@@ -104,8 +103,6 @@ export async function PUT(req: NextRequest) {
             JSON.stringify(updatedCarts, null, 4),
             "utf-8"
         );
-
-        revalidatePath("/", "layout");
 
         return NextResponse.json({
             message: "Shopping cart updated succesfully",

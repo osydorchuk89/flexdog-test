@@ -9,14 +9,13 @@ import { type Product, type User, type Wishlist } from "../../lib/entities";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { modalActions, userWishlistActions } from "@/store";
 import { CloseIconButton } from "./ui/CloseIconButton";
+import { useRouter } from "next/navigation";
 
 interface AddToWishlistModalProps {
     wishlists: Wishlist[];
 }
 
-export const AddToWishlistModal = ({
-    wishlists,
-}: AddToWishlistModalProps) => {
+export const AddToWishlistModal = ({ wishlists }: AddToWishlistModalProps) => {
     const { wishlistProductId, addToWishlistFormOpen } = useAppSelector(
         (state) => state.modals
     );
@@ -56,6 +55,8 @@ export const AddToWishlistModal = ({
     const modalRef = useRef<HTMLDivElement>(null);
     useModalClose(onModalClose, modalRef as React.RefObject<HTMLDivElement>);
 
+    const router = useRouter();
+
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
@@ -79,6 +80,7 @@ export const AddToWishlistModal = ({
             selectedWishListId,
             productOnWishlist // check if the product should be moved to other wishlist
         );
+        router.refresh();
         dispatch(modalActions.closeAddToWishListForm());
     };
 
