@@ -1,0 +1,93 @@
+[
+    {
+        "id": "1d169333-97bf-4d1c-bbe0-faa257ce0b31",
+        "userId": "1f4bda4e-26c2-4d2d-9b3b-285df35e2a1e",
+        "name": "Můj Wishlist",
+        "description": "",
+        "isDefault": false,
+        "isPublic": false,
+        "products": []
+    },
+    {
+        "id": "e5271791-6d3f-4baa-8380-b2f4165429fe",
+        "userId": "c75a78d3-295a-4c68-b92f-ff9e236eb212",
+        "name": "Můj Wishlist",
+        "description": "",
+        "isDefault": false,
+        "isPublic": false,
+        "products": []
+    },
+    {
+        "id": "cfc77e4b-256a-4729-a970-d3e42e8a8e00",
+        "userId": "db4a2391-1f65-472e-a6dd-a32a7e3f0c83",
+        "name": "Můj Wishlist",
+        "description": "",
+        "isDefault": false,
+        "isPublic": false,
+        "products": []
+    },
+    {
+        "id": "533f9ed6-c5a3-409c-a390-e369bf3f6aad",
+        "userId": "7e836b29-3a12-4c49-987d-8572b15e871d",
+        "name": "My new wishlist",
+        "description": "",
+        "isDefault": true,
+        "isPublic": true,
+        "products": [
+            "2b3c4d5e-6789-1011-1121-415161718192",
+            "4d5e6f7g-8901-1011-1121-617181920214",
+            "5e6f7g8h-9011-1011-1121-718192021225"
+        ]
+    },
+    {
+        "id": "b836784f-0562-4ef8-b93f-6bbf68ff2e6a",
+        "userId": "7e836b29-3a12-4c49-987d-8572b15e871d",
+        "name": "my wishlist-2",
+        "description": "",
+        "isDefault": false,
+        "isPublic": true,
+        "products": []
+    },
+    {
+        "id": "806d2a35-d3ee-4b2f-b311-3f59613990b9",
+        "userId": "7e836b29-3a12-4c49-987d-8572b15e871d",
+        "name": "my wishlist-3",
+        "description": "",
+        "isDefault": false,
+        "isPublic": true,
+        "products": []
+    },
+    {
+        "id": "2afa4351-6499-4d46-af64-b8be5597637b",
+        "userId": "7e836b29-3a12-4c49-987d-8572b15e871d",
+        "name": "my wishlist-4",
+        "description": "",
+        "isDefault": false,
+        "isPublic": true,
+        "products": [
+            "1a2b3c4d-5678-9101-1121-314151617181"
+        ]
+    },
+    {
+        "id": "bb7f7669-60ea-41da-8c10-1b2fa99cc7b6",
+        "userId": "7e836b29-3a12-4c49-987d-8572b15e871d",
+        "name": "my wishlist-5",
+        "description": "",
+        "isDefault": false,
+        "isPublic": false,
+        "products": [
+            "6f7g8h9i-0111-1011-1121-819202122236"
+        ]
+    },
+    {
+        "id": "d536da3f-617e-4dae-ba0d-ed1d6ffd8bbf",
+        "userId": "7e836b29-3a12-4c49-987d-8572b15e871d",
+        "name": "my wishlist-6",
+        "description": "",
+        "isDefault": false,
+        "isPublic": true,
+        "products": [
+            "3c4d5e6f-7890-1011-1121-516171819203"
+        ]
+    }
+]

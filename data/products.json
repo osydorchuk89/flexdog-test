@@ -1,0 +1,172 @@
+[
+    {
+        "id": "1a2b3c4d-5678-9101-1121-314151617181",
+        "type": "sneakers",
+        "brand": "Nike",
+        "model": "Air Max 90",
+        "for": "men",
+        "price": 3299,
+        "image_url": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=2650&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "available": true
+    },
+    {
+        "id": "2b3c4d5e-6789-1011-1121-415161718192",
+        "type": "sneakers",
+        "brand": "Adidas",
+        "model": "Ultraboost 22",
+        "for": "women",
+        "price": 3999,
+        "image_url": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=2650&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "available": false
+    },
+    {
+        "id": "3c4d5e6f-7890-1011-1121-516171819203",
+        "type": "sneakers",
+        "brand": "Puma",
+        "model": "RS-X³",
+        "for": "children",
+        "price": 2799,
+        "image_url": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=2650&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "available": true
+    },
+    {
+        "id": "4d5e6f7g-8901-1011-1121-617181920214",
+        "type": "sneakers",
+        "brand": "New Balance",
+        "model": "574 Core",
+        "for": "men",
+        "price": 2499,
+        "image_url": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=2650&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "available": true
+    },
+    {
+        "id": "5e6f7g8h-9011-1011-1121-718192021225",
+        "type": "sneakers",
+        "brand": "Reebok",
+        "model": "Classic Leather",
+        "for": "women",
+        "price": 2199,
+        "image_url": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=2650&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "available": false
+    },
+    {
+        "id": "6f7g8h9i-0111-1011-1121-819202122236",
+        "type": "sneakers",
+        "brand": "Vans",
+        "model": "Old Skool",
+        "for": "children",
+        "price": 1899,
+        "image_url": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=2650&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "available": true
+    },
+    {
+        "id": "7g8h9i0j-1111-1011-1121-920212223247",
+        "type": "sneakers",
+        "brand": "Asics",
+        "model": "Gel-Kayano 29",
+        "for": "men",
+        "price": 3499,
+        "image_url": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=2650&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "available": true
+    },
+    {
+        "id": "8h9i0j1k-2111-1011-1121-021222324258",
+        "type": "sneakers",
+        "brand": "Converse",
+        "model": "Chuck Taylor All Star",
+        "for": "women",
+        "price": 1499,
+        "image_url": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=2650&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "available": false
+    },
+    {
+        "id": "9i0j1k2l-3111-1011-1121-122232425269",
+        "type": "sneakers",
+        "brand": "Fila",
+        "model": "Disruptor II",
+        "for": "children",
+        "price": 1999,
+        "image_url": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=2650&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "available": true
+    },
+    {
+        "id": "0j1k2l3m-4111-1011-1121-222324252270",
+        "type": "sneakers",
+        "brand": "Jordan",
+        "model": "Air Jordan 1",
+        "for": "men",
+        "price": 4699,
+        "image_url": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=2650&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "available": true
+    },
+    {
+        "id": "1k2l3m4n-5111-1011-1121-323242526281",
+        "type": "sneakers",
+        "brand": "Saucony",
+        "model": "Shadow 5000",
+        "for": "women",
+        "price": 2899,
+        "image_url": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=2650&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "available": false
+    },
+    {
+        "id": "2l3m4n5o-6111-1011-1121-424252627292",
+        "type": "sneakers",
+        "brand": "Under Armour",
+        "model": "HOVR Phantom",
+        "for": "children",
+        "price": 3199,
+        "image_url": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=2650&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "available": true
+    },
+    {
+        "id": "3m4n5o6p-7111-1011-1121-525262728303",
+        "type": "sneakers",
+        "brand": "Timberland",
+        "model": "Euro Hiker",
+        "for": "men",
+        "price": 3599,
+        "image_url": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=2650&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "available": true
+    },
+    {
+        "id": "4n5o6p7q-8111-1011-1121-626272829314",
+        "type": "sneakers",
+        "brand": "Salomon",
+        "model": "XT-6 Advanced",
+        "for": "women",
+        "price": 3899,
+        "image_url": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=2650&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "available": false
+    },
+    {
+        "id": "5o6p7q8r-9111-1011-1121-727282930325",
+        "type": "sneakers",
+        "brand": "Merrell",
+        "model": "Moab 3",
+        "for": "children",
+        "price": 2399,
+        "image_url": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=2650&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "available": true
+    },
+    {
+        "id": "6p7q8r9s-0111-1011-1121-828293031336",
+        "type": "sneakers",
+        "brand": "Hoka",
+        "model": "Bondi 8",
+        "for": "men",
+        "price": 4499,
+        "image_url": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=2650&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "available": true
+    },
+    {
+        "id": "7q8r9s0t-1111-1011-1121-929303132347",
+        "type": "sneakers",
+        "brand": "On Running",
+        "model": "Cloud X",
+        "for": "women",
+        "price": 3699,
+        "image_url": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=2650&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "available": false
+    }
+]

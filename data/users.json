@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1f4bda4e-26c2-4d2d-9b3b-285df35e2a1e",
+        "name": "Jane Doe",
+        "email": "jane.doe@email.com",
+        "password": "janedoepassword"
+    },
+    {
+        "id": "7e836b29-3a12-4c49-987d-8572b15e871d",
+        "name": "John Doe",
+        "email": "john.doe@email.com",
+        "password": "johndoepassword"
+    },
+    {
+        "id": "c75a78d3-295a-4c68-b92f-ff9e236eb212",
+        "name": "Jan Novak",
+        "email": "jan.novak@email.com",
+        "password": "jannovakpassword"
+    },
+    {
+        "id": "db4a2391-1f65-472e-a6dd-a32a7e3f0c83",
+        "name": "Lucie Dvorakova",
+        "email": "lucie.dvorakova@email.com",
+        "password": "luciedvorakovapassword"
+    }
+]
