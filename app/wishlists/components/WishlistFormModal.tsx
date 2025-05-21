@@ -101,8 +101,8 @@ export const WishlistFormModal = ({ userId }: WishlistFormModalProps) => {
             setDescription("");
             setIsDefault(false);
             setIsPublic(false);
-            router.refresh();
             dispatch(modalActions.closeWishlistForm());
+            router.refresh();
         }
     };
 
@@ -157,6 +157,7 @@ export const WishlistFormModal = ({ userId }: WishlistFormModalProps) => {
                             type="checkbox"
                             name="isDefault"
                             checked={isDefault}
+                            disabled={activeWishlist?.isDefault}
                             onChange={(e) => setIsDefault(e.target.checked)}
                         />
                         Defaultní wishlist

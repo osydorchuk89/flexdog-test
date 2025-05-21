@@ -6,6 +6,7 @@ import { type Product, type User, type Wishlist } from "@/lib/entities";
 import { Products } from "@/app/components/Products";
 import { useAppDispatch } from "@/store/hooks";
 import { modalActions, userWishlistActions } from "@/store";
+import { useRouter } from "next/navigation";
 
 interface WishlistContentProps {
     user: User | undefined;
@@ -25,12 +26,14 @@ export const WishlistContent = ({
         dispatch(userWishlistActions.setActiveWishlist(wishlist));
     };
 
+    const router = useRouter();
+
     const handleDeleteWishlist = async () => {
         if (wishlist.products.length > 0) {
             dispatch(modalActions.openDeleteWishlist());
         } else {
             await deleteWishList(wishlist.id);
-            window.location.href = "/wishlists";
+            router.replace("/wishlists");
         }
     };
 

@@ -37,9 +37,9 @@ export const AddToCartModal = () => {
                     );
                 }
             }
-            router.refresh();
             dispatch(userWishlistActions.setActiveWishlist(null));
             dispatch(modalActions.closeAddToCart());
+            router.refresh();
         }
     };
 

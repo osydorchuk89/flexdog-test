@@ -79,8 +79,9 @@ export const AddToWishlistModal = ({ wishlists }: AddToWishlistModalProps) => {
             selectedWishListId,
             productOnWishlist // check if the product should be moved to other wishlist
         );
-        router.refresh();
         dispatch(modalActions.closeAddToWishListForm());
+        dispatch(modalActions.setWishlistProductId(null));
+        router.refresh();
     };
 
     const handleCreateWishlist = () => {

@@ -10,8 +10,7 @@ const cartsFilePath = path.join(process.cwd(), "data", "carts.json");
 // get user's shopping cart
 export async function GET(req: NextRequest) {
     try {
-        const { searchParams } = new URL(req.url);
-        const userId = searchParams.get("userId");
+        const userId = req.nextUrl.searchParams.get("userId");
 
         const carts = await fetchCarts();
         const userCart = carts.find((cart) => cart.userId === userId);
@@ -43,9 +42,8 @@ export async function GET(req: NextRequest) {
 // add or remove a product to or from a shopping cart
 export async function PUT(req: NextRequest) {
     try {
-        const { searchParams } = new URL(req.url);
-        const userId = searchParams.get("userId");
         const { productId, remove } = await req.json();
+        const userId = req.nextUrl.searchParams.get("userId");
 
         let carts = await fetchCarts();
 
@@ -119,8 +117,7 @@ export async function PUT(req: NextRequest) {
 // delete all products from a cart
 export async function DELETE(req: NextRequest) {
     try {
-        const { searchParams } = new URL(req.url);
-        const userId = searchParams.get("userId");
+        const userId = req.nextUrl.searchParams.get("userId");
 
         const carts = await fetchCarts();
 

@@ -8,12 +8,14 @@ import { useModalClose } from "@/lib/hooks";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { modalActions } from "@/store";
 import { CloseIconButton } from "@/app/components/ui/CloseIconButton";
+import { usePathname, useRouter } from "next/navigation";
 
 interface DeleteWishListProps {
     wishlistId: string;
 }
 
 export const DeleteWishlistModal = ({ wishlistId }: DeleteWishListProps) => {
+    const path = usePathname();
     const { deleteWishlistOpen } = useAppSelector((state) => state.modals);
     const dispatch = useAppDispatch();
 
@@ -24,10 +26,14 @@ export const DeleteWishlistModal = ({ wishlistId }: DeleteWishListProps) => {
     const modalRef = useRef<HTMLDivElement>(null);
     useModalClose(onModalClose, modalRef as React.RefObject<HTMLDivElement>);
 
+    const router = useRouter();
+
     const handleDeleteWishlist = async () => {
         await deleteWishList(wishlistId);
         onModalClose();
-        window.location.href = "/wishlists";
+        path.includes("/wishlists/")
+            ? router.replace("/wishlists")
+            : router.refresh();
     };
     return (
         <Modal isOpen={deleteWishlistOpen}>

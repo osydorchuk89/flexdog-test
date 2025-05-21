@@ -11,8 +11,7 @@ const wishlistsFilePath = path.join(process.cwd(), "data", "wishlists.json");
 // get all user's wishlists
 export async function GET(req: NextRequest) {
     try {
-        const { searchParams } = new URL(req.url);
-        const userId = searchParams.get("userId");
+        const userId = req.nextUrl.searchParams.get("userId");
 
         const wishlists = await fetchWishlists();
         const productMap = await getProductsMap();
@@ -38,7 +37,7 @@ export async function GET(req: NextRequest) {
 // add or edit a wishlist
 export async function POST(req: NextRequest) {
     try {
-        const {
+        let {
             userId,
             name,
             description,
@@ -65,6 +64,16 @@ export async function POST(req: NextRequest) {
         }
 
         let wishlists = await fetchWishlists();
+
+        // prevent user from making an existing default wishlist non-default
+        const currentWishlist = wishlists.find(
+            (wishlist) => wishlist.id === wishlistId
+        );
+        if (currentWishlist) {
+            if (currentWishlist.isDefault && isDefault === false) {
+                isDefault = true;
+            }
+        }
 
         const newWishlist: Wishlist = {
             id: wishlistId || uuidv4(),
