@@ -4,7 +4,7 @@
         "userId": "1f4bda4e-26c2-4d2d-9b3b-285df35e2a1e",
         "name": "Můj Wishlist",
         "description": "",
-        "isDefault": false,
+        "isDefault": true,
         "isPublic": false,
         "products": []
     },
@@ -13,7 +13,7 @@
         "userId": "c75a78d3-295a-4c68-b92f-ff9e236eb212",
         "name": "Můj Wishlist",
         "description": "",
-        "isDefault": false,
+        "isDefault": true,
         "isPublic": false,
         "products": []
     },
@@ -22,7 +22,7 @@
         "userId": "db4a2391-1f65-472e-a6dd-a32a7e3f0c83",
         "name": "Můj Wishlist",
         "description": "",
-        "isDefault": false,
+        "isDefault": true,
         "isPublic": false,
         "products": []
     },
@@ -45,9 +45,7 @@
         "description": "",
         "isDefault": false,
         "isPublic": true,
-        "products": [
-            "3c4d5e6f-7890-1011-1121-516171819203"
-        ]
+        "products": ["3c4d5e6f-7890-1011-1121-516171819203"]
     },
     {
         "id": "806d2a35-d3ee-4b2f-b311-3f59613990b9",
@@ -56,8 +54,6 @@
         "description": "",
         "isDefault": false,
         "isPublic": true,
-        "products": [
-            "5e6f7g8h-9011-1011-1121-718192021225"
-        ]
+        "products": ["5e6f7g8h-9011-1011-1121-718192021225"]
     }
 ]
