@@ -56,7 +56,7 @@ export const LoginForm = () => {
                         className="border border-gray-700 rounded-xl px-3 py-2 focus:border-stone-900"
                         type="password"
                         name="password"
-                        placeholder="password"
+                        placeholder="heslo"
                     />
                 </div>
                 <div className="flex justify-center">

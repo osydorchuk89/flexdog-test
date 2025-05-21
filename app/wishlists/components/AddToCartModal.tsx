@@ -39,7 +39,7 @@ export const AddToCartModal = () => {
             }
             dispatch(userWishlistActions.setActiveWishlist(null));
             dispatch(modalActions.closeAddToCart());
-            router.refresh();
+            process.env.NODE_ENV === "production" && router.refresh();
         }
     };
 

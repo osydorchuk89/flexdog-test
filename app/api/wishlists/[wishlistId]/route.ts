@@ -1,6 +1,7 @@
 import path from "path";
 import fs from "fs/promises";
 import { NextRequest, NextResponse } from "next/server";
+import { revalidateTag } from "next/cache";
 
 import { fetchWishlists, getProductsMap } from "@/lib/utils";
 
@@ -84,6 +85,9 @@ export async function PUT(
             "utf-8"
         );
 
+        revalidateTag("userWishlists");
+        revalidateTag("userWishlist");
+
         return NextResponse.json({ message: "Wishlist succesfully updated" });
     } catch (error) {
         console.error("Server error:", error);
@@ -138,6 +142,9 @@ export async function DELETE(
             JSON.stringify(updatedWishlists, null, 4),
             "utf-8"
         );
+
+        revalidateTag("userWishlists");
+        revalidateTag("userWishlist");
 
         return NextResponse.json({ message: "Wishlist successfully deleted" });
     } catch (error) {

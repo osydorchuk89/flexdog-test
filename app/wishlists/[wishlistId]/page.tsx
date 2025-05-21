@@ -1,5 +1,6 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { unstable_cache } from "next/cache";
 
 import { type User } from "@/lib/entities";
 import { getUserWishlists, getWishlist } from "@/lib/actions";
@@ -9,6 +10,17 @@ import { DeleteWishlistModal } from "../components/DeleteWishlistModal";
 import { AddToWishlistModal } from "@/app/components/AddToWishlistModal";
 import { AddToCartModal } from "../components/AddToCartModal";
 import { RedirectToLoginModal } from "@/app/components/RedirectToLoginModal";
+
+const getCachedUserWishlists = unstable_cache(
+    async (userId: string) => getUserWishlists(userId),
+    ["user-wishlists"],
+    { tags: ["userWishlists"] }
+);
+const getCachedWishlist = unstable_cache(
+    async (wishlistId: string) => getWishlist(wishlistId),
+    ["user-wishlist"],
+    { tags: ["userWishlist"] }
+);
 
 export default async function WishlistPage({
     params,
@@ -23,9 +35,8 @@ export default async function WishlistPage({
         ? JSON.parse(session.value)
         : undefined;
 
-    const wishlists = (user && (await getUserWishlists(user.id))) || [];
-
-    const wishlist = await getWishlist(wishlistId);
+    const wishlists = (user && (await getCachedUserWishlists(user.id))) || [];
+    const wishlist = await getCachedWishlist(wishlistId);
 
     if (!wishlist || !wishlist.isPublic) {
         redirect("/");

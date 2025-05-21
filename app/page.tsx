@@ -1,4 +1,6 @@
 import { cookies } from "next/headers";
+import { unstable_cache } from "next/cache";
+
 import { Products } from "./components/Products";
 import { getProducts, getUserWishlists } from "../lib/actions";
 import { User } from "../lib/entities";
@@ -6,14 +8,22 @@ import { AddToWishlistModal } from "./components/AddToWishlistModal";
 import { WishlistFormModal } from "./wishlists/components/WishlistFormModal";
 import { RedirectToLoginModal } from "./components/RedirectToLoginModal";
 
+const getCachedProducts = unstable_cache(getProducts, ["user-products"]);
+const getCachedUserWishlists = unstable_cache(
+    async (userId: string) => getUserWishlists(userId),
+    ["user-wishlists"],
+    { tags: ["userWishlists"] }
+);
+
 export default async function HomePage() {
     const cookieStore = await cookies();
     const session = cookieStore.get("userSession");
-    const user: User | undefined = session ? JSON.parse(session.value) : undefined;
+    const user: User | undefined = session
+        ? JSON.parse(session.value)
+        : undefined;
 
-    const wishlists = (user && (await getUserWishlists(user.id))) || [];
-
-    const products = await getProducts();
+    const products = await getCachedProducts();
+    const wishlists = (user && (await getCachedUserWishlists(user.id))) || [];
 
     if (!products) {
         return (

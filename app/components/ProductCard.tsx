@@ -56,7 +56,7 @@ export const ProductCard = ({ product, wishlists, user }: ProductCardProps) => {
             );
             if (wishlist) {
                 await addOrRemoveFromWishList(product.id, wishlist.id);
-                router.refresh();
+                process.env.NODE_ENV === "production" && router.refresh();
             }
         } else {
             dispatch(modalActions.openAddToWishlistForm());

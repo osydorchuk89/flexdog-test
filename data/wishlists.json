@@ -34,7 +34,8 @@
         "isDefault": true,
         "isPublic": true,
         "products": [
-            "4d5e6f7g-8901-1011-1121-617181920214"
+            "0j1k2l3m-4111-1011-1121-222324252270",
+            "1a2b3c4d-5678-9101-1121-314151617181"
         ]
     },
     {
@@ -45,7 +46,7 @@
         "isDefault": false,
         "isPublic": true,
         "products": [
-            "2b3c4d5e-6789-1011-1121-415161718192"
+            "3c4d5e6f-7890-1011-1121-516171819203"
         ]
     },
     {
@@ -57,39 +58,6 @@
         "isPublic": true,
         "products": [
             "5e6f7g8h-9011-1011-1121-718192021225"
-        ]
-    },
-    {
-        "id": "2afa4351-6499-4d46-af64-b8be5597637b",
-        "userId": "7e836b29-3a12-4c49-987d-8572b15e871d",
-        "name": "my wishlist-4",
-        "description": "",
-        "isDefault": false,
-        "isPublic": true,
-        "products": [
-            "1a2b3c4d-5678-9101-1121-314151617181"
-        ]
-    },
-    {
-        "id": "bb7f7669-60ea-41da-8c10-1b2fa99cc7b6",
-        "userId": "7e836b29-3a12-4c49-987d-8572b15e871d",
-        "name": "my wishlist-5",
-        "description": "",
-        "isDefault": false,
-        "isPublic": false,
-        "products": [
-            "6f7g8h9i-0111-1011-1121-819202122236"
-        ]
-    },
-    {
-        "id": "d536da3f-617e-4dae-ba0d-ed1d6ffd8bbf",
-        "userId": "7e836b29-3a12-4c49-987d-8572b15e871d",
-        "name": "my wishlist-6",
-        "description": "",
-        "isDefault": false,
-        "isPublic": true,
-        "products": [
-            "3c4d5e6f-7890-1011-1121-516171819203"
         ]
     }
 ]

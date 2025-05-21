@@ -1,6 +1,7 @@
 import path from "path";
 import fs from "fs/promises";
 import { NextRequest, NextResponse } from "next/server";
+import { revalidateTag } from "next/cache";
 
 import { type Product } from "@/lib/entities";
 import { fetchCarts, getProductsMap } from "@/lib/utils";
@@ -102,6 +103,8 @@ export async function PUT(req: NextRequest) {
             "utf-8"
         );
 
+        revalidateTag("userCart");
+
         return NextResponse.json({
             message: "Shopping cart updated succesfully",
         });
@@ -130,6 +133,8 @@ export async function DELETE(req: NextRequest) {
             JSON.stringify(updatedCarts, null, 4),
             "utf-8"
         );
+
+        revalidateTag("userCart");
 
         return NextResponse.json({
             message: "All products succesfully deleted form the shopping cart",

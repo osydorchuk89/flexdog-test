@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
+import { unstable_cache } from "next/cache";
 
 import { Providers } from "./StoreProviders";
 import { Header } from "./components/layout/Header";
@@ -13,6 +14,12 @@ export const metadata: Metadata = {
     description: "A dummy Flexdog application",
 };
 
+const getCachedUserCart = unstable_cache(
+    async (userId: string) => getUserCart(userId),
+    ["user-cart"],
+    { tags: ["userCart"] }
+);
+
 export default async function RootLayout({
     children,
 }: Readonly<{
@@ -21,8 +28,11 @@ export default async function RootLayout({
     const cookieStore = await cookies();
     const session = cookieStore.get("userSession");
 
-    const user: User | undefined = session ? JSON.parse(session.value) : undefined;
-    const userCart = (user && (await getUserCart(user.id))) || undefined;
+    const user: User | undefined = session
+        ? JSON.parse(session.value)
+        : undefined;
+
+    const userCart = (user && (await getCachedUserCart(user.id))) || undefined;
 
     return (
         <Providers>

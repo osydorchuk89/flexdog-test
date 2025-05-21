@@ -5,7 +5,7 @@ import { useModalClose } from "@/lib/hooks";
 import { Modal } from "@/app/components/ui/Modal";
 import { Button } from "./ui/Button";
 import { addOrRemoveFromWishList } from "../../lib/actions";
-import { type Product, type User, type Wishlist } from "../../lib/entities";
+import { type Product, type Wishlist } from "../../lib/entities";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { modalActions, userWishlistActions } from "@/store";
 import { CloseIconButton } from "./ui/CloseIconButton";
@@ -47,7 +47,6 @@ export const AddToWishlistModal = ({ wishlists }: AddToWishlistModalProps) => {
 
     const dispatch = useAppDispatch();
     const onModalClose = () => {
-        // dispatch(userWishlistActions.setActiveWishlist(null));
         dispatch(modalActions.closeAddToWishListForm());
     };
 
@@ -81,7 +80,7 @@ export const AddToWishlistModal = ({ wishlists }: AddToWishlistModalProps) => {
         );
         dispatch(modalActions.closeAddToWishListForm());
         dispatch(modalActions.setWishlistProductId(null));
-        router.refresh();
+        process.env.NODE_ENV === "production" && router.refresh();
     };
 
     const handleCreateWishlist = () => {

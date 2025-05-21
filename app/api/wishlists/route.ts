@@ -2,6 +2,7 @@ import path from "path";
 import fs from "fs/promises";
 import { v4 as uuidv4 } from "uuid";
 import { NextRequest, NextResponse } from "next/server";
+import { revalidateTag } from "next/cache";
 
 import { type Wishlist } from "@/lib/entities";
 import { fetchWishlists, getProductsMap } from "@/lib/utils";
@@ -120,6 +121,8 @@ export async function POST(req: NextRequest) {
             JSON.stringify(updatedWishLists, null, 4),
             "utf-8"
         );
+
+        revalidateTag("userWishlists");
 
         return NextResponse.json({
             message: wishlistId

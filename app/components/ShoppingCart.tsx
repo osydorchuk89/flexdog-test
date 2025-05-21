@@ -16,17 +16,17 @@ export const ShoppingCart = ({ userCart, handleClose }: ShoppingCartProps) => {
 
     const handleAddProduct = async (productId: string) => {
         await addOrRemoveFromCart(userCart.userId, productId);
-        router.refresh();
+        process.env.NODE_ENV === "production" && router.refresh();
     };
 
     const handleRemoveProduct = async (productId: string) => {
         await addOrRemoveFromCart(userCart.userId, productId, true);
-        router.refresh();
+        process.env.NODE_ENV === "production" && router.refresh();
     };
 
     const handleRemoveAllProducts = async () => {
         await clearCart(userCart.userId);
-        router.refresh();
+        process.env.NODE_ENV === "production" && router.refresh();
     };
 
     return (

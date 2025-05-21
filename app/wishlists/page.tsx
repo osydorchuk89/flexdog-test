@@ -1,5 +1,6 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { unstable_cache } from "next/cache";
 
 import { getUserWishlists } from "../../lib/actions";
 import { Wishlists } from "./components/Wishlists";
@@ -8,6 +9,12 @@ import { type User } from "../../lib/entities";
 import { WishlistUrlModal } from "./components/WishlistUrlModal";
 import { AddToWishlistModal } from "../components/AddToWishlistModal";
 import { AddToCartModal } from "./components/AddToCartModal";
+
+const getCachedUserWishlists = unstable_cache(
+    async (userId: string) => getUserWishlists(userId),
+    ["user-wishlists"],
+    { tags: ["userWishlists"] }
+);
 
 export default async function WishlistsPage() {
     const cookieStore = await cookies();
@@ -18,8 +25,7 @@ export default async function WishlistsPage() {
     }
 
     const user: User = JSON.parse(session.value);
-
-    const wishlists = await getUserWishlists(user.id);
+    const wishlists = await getCachedUserWishlists(user.id);
 
     if (!wishlists) {
         return (

@@ -1,4 +1,5 @@
 import { fetchUsers } from "@/lib/utils";
+import { revalidatePath } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 
 // checking the login data sent by user and creating a session, if it is valid
@@ -41,6 +42,8 @@ export async function POST(req: NextRequest) {
                 path: "/",
             }
         );
+
+        revalidatePath("/", "layout");
 
         return response;
     } catch (error) {

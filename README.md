@@ -10,23 +10,37 @@ This is a test app that allows registered and logged in users to create/edit/del
 
 Clone the repository to your local machine by running the following command:
 
-`git clone https://github.com/osydorchuk89/flexdog-test.git`
+```
+git clone https://github.com/osydorchuk89/flexdog-test.git
+```
 
 Next, navigate to the created directory:
 
-`cd flexdog-test`
+```
+cd flexdog-test
+```
 
 ### 2. Install dependencies
 
 Install required dependencies with the command:
 
-`npm install`
+```
+npm install
+```
 
 ### 3. Run the app
 
-Run the application by entering the following command:
+Build the application for production by entering the following command:
 
-`npm run dev`
+```
+npm run build
+```
+
+Then, run the built application:
+
+```
+npm start
+```
 
 The app is now accessible at [http://localhost:3000](http://localhost:3000).
 
@@ -34,8 +48,12 @@ The app is now accessible at [http://localhost:3000](http://localhost:3000).
 
 Alternatively, you can run the app using Docker. For this, make sure that Docker is installed and running on your machine. After cloning the repository and navigating to the target directory, build and run a Docker container, using the following commands:
 
-`docker build -t flexdog-test .`
+```
+docker build -t flexdog-test .
+```
 
-`docker run -p 3000:3000 flexdog-test`
+```
+docker run -p 3000:3000 flexdog-test
+```
 
 The app is again accesible at [http://localhost:3000](http://localhost:3000).

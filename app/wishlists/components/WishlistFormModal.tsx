@@ -102,7 +102,7 @@ export const WishlistFormModal = ({ userId }: WishlistFormModalProps) => {
             setIsDefault(false);
             setIsPublic(false);
             dispatch(modalActions.closeWishlistForm());
-            router.refresh();
+            process.env.NODE_ENV === "production" && router.refresh();
         }
     };
 

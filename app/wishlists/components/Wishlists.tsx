@@ -58,7 +58,7 @@ export const Wishlists = ({ wishlists, user }: WishlistProps) => {
             dispatch(modalActions.openDeleteWishlist());
         } else {
             await deleteWishList(selectedWishList.id);
-            router.refresh();
+            process.env.NODE_ENV === "production" && router.refresh();
         }
     };
 

@@ -33,7 +33,7 @@ export const DeleteWishlistModal = ({ wishlistId }: DeleteWishListProps) => {
         onModalClose();
         path.includes("/wishlists/")
             ? router.replace("/wishlists")
-            : router.refresh();
+            : process.env.NODE_ENV === "production" && router.refresh();
     };
     return (
         <Modal isOpen={deleteWishlistOpen}>
