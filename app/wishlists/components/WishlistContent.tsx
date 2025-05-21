@@ -55,6 +55,7 @@ export const WishlistContent = ({
                     handleDeleteWishlist={handleDeleteWishlist}
                     handleAddProductsToCart={handleAddProductsToCart}
                     areProducts={wishlist.products.length > 0}
+                    isOnlyWishlist={wishlists.length === 1}
                 />
             )}
         </>

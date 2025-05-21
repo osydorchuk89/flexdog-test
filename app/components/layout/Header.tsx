@@ -54,6 +54,7 @@ export const Header = ({ user, userCart }: HeaderProps) => {
 
     const handleLogout = async () => {
         await logout();
+        dispatch(userWishlistActions.setActiveWishlist(null));
         router.push("/");
         router.refresh();
     };
@@ -113,9 +114,11 @@ export const Header = ({ user, userCart }: HeaderProps) => {
                         onClick={() => setCartOpen((prevValue) => !prevValue)}
                     >
                         <CartIcon />
-                        {cartProductsQuantity! > 0 && <p className="text-[10px] absolute top-[2px] right-[2px] bg-black text-white rounded-full py-[1px] px-[5px]">
-                            {cartProductsQuantity}
-                        </p>}
+                        {cartProductsQuantity! > 0 && (
+                            <p className="text-[10px] absolute top-[2px] right-[2px] bg-black text-white rounded-full py-[1px] px-[5px]">
+                                {cartProductsQuantity}
+                            </p>
+                        )}
                     </IconButton>
                     <div
                         className={

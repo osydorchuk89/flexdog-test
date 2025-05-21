@@ -144,6 +144,7 @@ export const Wishlists = ({ wishlists, user }: WishlistProps) => {
                 handleDeleteWishlist={handleDeleteWishlist}
                 handleAddProductsToCart={handleAddProductsToCart}
                 areProducts={selectedWishList.products.length > 0}
+                isOnlyWishlist={wishlists.length === 1}
             />
             <DeleteWishlistModal wishlistId={selectedWishList.id} />
         </div>
